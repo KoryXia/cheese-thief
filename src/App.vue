@@ -39,7 +39,7 @@ const playAudio = () => {
 const start = () => {
   if (playing.value) return
   playing.value = true
-  playAudio()
+  playAudio().finally(() => playing.value = false)
 }
 
 const stop = () => {
